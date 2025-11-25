@@ -95,6 +95,13 @@
       color: #e5e7eb;
     }
 
+    .card h3 {
+      font-size: 0.95rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.3rem;
+      color: #f9fafb;
+    }
+
     .card p {
       font-size: 0.9rem;
       color: #d1d5db;
@@ -198,6 +205,34 @@
       align-items: center;
     }
 
+    /* Motivation image gallery */
+    .motivation-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .motivation-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .motivation-img {
+      width: 100%;
+      border-radius: 0.75rem;
+      border: 1px solid #1f2937;
+      max-height: 190px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .motivation-caption {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -227,6 +262,7 @@
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero-title">
         Start <span>small</span>. Stay <span>consistent</span>. Trust the process.
@@ -238,8 +274,12 @@
       <p class="hero-sub">
         <strong>Tip for today:</strong> Choose one thing you’ve been delaying, and do it for just 10 minutes.
       </p>
+      <p class="small" style="margin-top:0.75rem;">
+        Below you’ll find wisdom from Malcolm X, Martin Luther King Jr., and other legendary voices of motivation.
+      </p>
     </section>
 
+    <!-- ORIGINAL 4 CARDS -->
     <section class="grid">
       <!-- Card 1: Powerful Quotes -->
       <article class="card">
@@ -300,9 +340,132 @@
         </p>
         <p class="small">
           Want to send feedback or a message?  
-          You can email me at: <a href="mailto:your-email@example.com">your-email@example.com</a>
+          You can email me at:
+          <a href="mailto:your-email@example.com">your-email@example.com</a>
+          <!-- Change this to your real email -->
         </p>
       </article>
+    </section>
+
+    <!-- LEGENDS: MALCOLM X & MLK -->
+    <section class="card">
+      <h2>Legends of Motivation: Malcolm X & Martin Luther King Jr.</h2>
+
+      <h3>Malcolm X</h3>
+      <p class="small">
+        Malcolm X was a powerful voice for justice, dignity, and self-discipline.  
+        He reminded people that change begins with knowledge, effort, and courage.
+      </p>
+      <p class="quote">
+        “Education is the passport to the future, for tomorrow belongs to those who prepare for it today.”
+      </p>
+      <p class="quote">
+        “If you have no critics, you’ll likely have no success.”
+      </p>
+      <p class="quote">
+        “The future belongs to those who work for it today.”
+      </p>
+
+      <h3>Martin Luther King Jr.</h3>
+      <p class="small">
+        Dr. Martin Luther King Jr. led with faith, patience, and non-violence.  
+        His words still push us to keep moving, even when life feels heavy.
+      </p>
+      <p class="quote">
+        “Faith is taking the first step even when you don’t see the whole staircase.”
+      </p>
+      <p class="quote">
+        “The time is always right to do what is right.”
+      </p>
+      <p class="quote">
+        “If you can’t fly, then run. If you can’t run, then walk.
+        If you can’t walk, then crawl, but whatever you do you have to keep moving forward.”
+      </p>
+
+      <p class="small">
+        Take one quote from Malcolm X or MLK and let it guide your decisions today, in shaa Allah.
+      </p>
+    </section>
+
+    <!-- OTHER FAMOUS MOTIVATORS -->
+    <section class="card">
+      <h2>Words from Great Motivators</h2>
+
+      <h3>Les Brown</h3>
+      <p class="quote">
+        “You don’t have to be great to start, but you have to start to be great.”
+      </p>
+      <p class="quote">
+        “Shoot for the moon. Even if you miss, you’ll land among the stars.”
+      </p>
+
+      <h3>Tony Robbins</h3>
+      <p class="quote">
+        “It is in your moments of decision that your destiny is shaped.”
+      </p>
+      <p class="quote">
+        “Where focus goes, energy flows.”
+      </p>
+
+      <h3>Jim Rohn</h3>
+      <p class="quote">
+        “Either you run the day or the day runs you.”
+      </p>
+      <p class="quote">
+        “Motivation is what gets you started. Habit is what keeps you going.”
+      </p>
+
+      <h3>Zig Ziglar</h3>
+      <p class="quote">
+        “People often say that motivation doesn’t last. Well, neither does bathing — that’s why we recommend it daily.”
+      </p>
+
+      <h3>Muhammad Ali</h3>
+      <p class="quote">
+        “Don’t count the days; make the days count.”
+      </p>
+      <p class="quote">
+        “It’s not the mountain ahead that wears you out, it’s the pebble in your shoe.”
+      </p>
+
+      <p class="small">
+        Come back to this section whenever you feel low. Read one line and act on it, even in a small way.
+      </p>
+    </section>
+
+    <!-- IMAGE GALLERY PLACEHOLDER -->
+    <section class="card">
+      <h2>Visual Motivation</h2>
+      <p class="small">
+        These images are here to remind you that every journey has struggle, beauty, and growth.
+        You can replace them with any motivational photos you like.
+      </p>
+
+      <div class="motivation-gallery">
+        <div class="motivation-item">
+          <img src="images/mountain.jpg" alt="Mountain sunrise" class="motivation-img" />
+          <div class="motivation-caption">A new day, a new chance. (Replace with your favorite sunrise image.)</div>
+        </div>
+
+        <div class="motivation-item">
+          <img src="images/road.jpg" alt="Long road" class="motivation-img" />
+          <div class="motivation-caption">The path is long, but every step counts. (Replace with a road or journey photo.)</div>
+        </div>
+
+        <div class="motivation-item">
+          <img src="images/city.jpg" alt="City skyline" class="motivation-img" />
+          <div class="motivation-caption">Your dreams are bigger than your fears. (Replace with a city or ambition image.)</div>
+        </div>
+
+        <div class="motivation-item">
+          <img src="images/climb.jpg" alt="Person climbing" class="motivation-img" />
+          <div class="motivation-caption">Keep climbing, even when it’s hard. (Replace with a climbing / effort photo.)</div>
+        </div>
+      </div>
+
+      <p class="small" style="margin-top:0.75rem;">
+        To change these pictures, just upload your own images and update the file names in the code.
+      </p>
     </section>
   </main>
 
