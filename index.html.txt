@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Motivation Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1.5rem 1.5rem 0.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #22c55e33, #0f172a);
+      border-radius: 1rem;
+      padding: 1.5rem 1.75rem;
+      border: 1px solid #1f2937;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      color: #22c55e;
+    }
+
+    .hero-text {
+      font-size: 0.95rem;
+      color: #d1d5db;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .hero-sub {
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .hero-sub strong {
+      color: #e5e7eb;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid #1f2937;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      color: #e5e7eb;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      line-height: 1.6;
+    }
+
+    .quote {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .list li {
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+    }
+
+    .badge-row {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #374151;
+      color: #d1d5db;
+    }
+
+    .badge.green {
+      border-color: #22c55e;
+      color: #bbf7d0;
+    }
+
+    .small {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin-top: 0.6rem;
+    }
+
+    .btn-row {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .btn {
+      font-size: 0.85rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #22c55e;
+      background: #16a34a;
+      color: #022c22;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn.outline {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: #4b5563;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .quote-display {
+      margin-top: 0.8rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.75rem;
+      border: 1px dashed #374151;
+      background: rgba(15,23,42,0.8);
+      font-size: 0.9rem;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    a {
+      color: #22c55e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 900px) {
+      header h1 { font-size: 2.4rem; }
+      .hero-title { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Daily Motivation Hub</h1>
+    <p>Simple reminders to keep you focused, patient, and grateful every day.</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-title">
+        Start <span>small</span>. Stay <span>consistent</span>. Trust the process.
+      </div>
+      <p class="hero-text">
+        You don’t need a perfect plan. You just need one small action today.  
+        Read a quote. Write one goal. Take one step. Repeat tomorrow.
+      </p>
+      <p class="hero-sub">
+        <strong>Tip for today:</strong> Choose one thing you’ve been delaying, and do it for just 10 minutes.
+      </p>
+    </section>
+
+    <section class="grid">
+      <!-- Card 1: Powerful Quotes -->
+      <article class="card">
+        <h2>Powerful Quotes</h2>
+        <p class="quote">
+          “Discipline is doing what needs to be done, even when you don’t feel like doing it.”
+          <span>— Unknown</span>
+        </p>
+        <p class="quote">
+          “It always seems impossible until it’s done.”
+          <span>— Nelson Mandela</span>
+        </p>
+        <p class="quote">
+          “Whoever is patient, Allah will make him patient. And no one is given a gift better and more comprehensive than patience.”
+          <span>— Hadith</span>
+        </p>
+        <p class="small">
+          Read one quote slowly. Breathe. Think about how it applies to your life today.
+        </p>
+      </article>
+
+      <!-- Card 2: Daily Actions -->
+      <article class="card">
+        <h2>3 Daily Actions</h2>
+        <ul class="list">
+          <li><strong>Mind</strong> – Read 1 page of a book or a reminder.</li>
+          <li><strong>Body</strong> – Move for 5–10 minutes (walk, stretch, light exercise).</li>
+          <li><strong>Heart</strong> – Make du&#8217;a, or send a kind message to someone.</li>
+        </ul>
+        <div class="badge-row">
+          <span class="badge green">Consistency over perfection</span>
+          <span class="badge">Small steps</span>
+          <span class="badge">Gratitude</span>
+        </div>
+      </article>
+
+      <!-- Card 3: Random Motivation (JS button) -->
+      <article class="card">
+        <h2>Need Motivation Right Now?</h2>
+        <p class="small">
+          Click the button to get a quick motivational line. Use it as your focus for the next hour.
+        </p>
+        <div class="btn-row">
+          <button class="btn" onclick="showRandomQuote()">Give me a boost 🔁</button>
+          <button class="btn outline" onclick="scrollToTop()">Back to top ↑</button>
+        </div>
+        <div class="quote-display" id="quoteBox">
+          Click the button to get a motivation boost.
+        </div>
+      </article>
+
+      <!-- Card 4: About & Contact -->
+      <article class="card">
+        <h2>About This Page</h2>
+        <p>
+          This website was created to remind you (and me) that every day is
+          another chance to improve a little bit. If this helped you, share it with someone who needs it.
+        </p>
+        <p class="small">
+          Want to send feedback or a message?  
+          You can email me at: <a href="mailto:your-email@example.com">your-email@example.com</a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Daily Motivation Hub. Keep going. One step at a time.
+  </footer>
+
+  <script>
+    const quotes = [
+      "You don't have to be perfect. You just have to be consistent.",
+      "Your future is built by the small habits you repeat every day.",
+      "Slow progress is still progress. Don’t stop.",
+      "Allah is with the patient. Keep trying, keep trusting.",
+      "If you can’t do 1 hour, do 10 minutes. If you can’t do 10, do 2.",
+      "You are closer than you think. Don’t give up now.",
+      "Work in silence. Let your success make the noise.",
+      "Rest if you must, but don’t quit.",
+      "Today’s effort becomes tomorrow’s comfort, in shaa Allah."
+    ];
+
+    function showRandomQuote() {
+      const box = document.getElementById("quoteBox");
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+      box.textContent = random;
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
